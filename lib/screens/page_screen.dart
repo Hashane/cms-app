@@ -13,14 +13,18 @@ class PageScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Page Screen')),
       body: pageAsyncValue.when(
-        data: (page) => Column(
-          children: [
-            Text('Title: ${page.title}'),
-            Text('Content: ${page.bodyHtml}'),
-          ],
+        data: (page) => SingleChildScrollView(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Title: ${page.title}'),
+              Text('Content: ${page.bodyHtml}'),
+            ],
+          ),
         ),
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (err, stack) => const Center(child: Text('Failed to load page')),
+        error: (err, stack) => Center(child: Text('Failed to load menu: $err')),
       ),
     );
   }
