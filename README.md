@@ -26,10 +26,6 @@ The API base URL is set in `lib/core/api/api_client.dart`
 
 ## Screenshots
 
-Menu screen:
+Screens:
 
-![Menu screen](screenshots/menu.png)
-
-Page screen:
-
-![Page screen](screenshots/page.png)
+![Menu screen](screenshots/mockup.png)
